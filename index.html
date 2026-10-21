@@ -4,125 +4,235 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- Faz o site se adaptar à tela do celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#fff8fb">
 
     <title>MySpace | Meu Aplicativo</title>
 
-    <!-- Conexão com o CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="cabecalho">
-        <h1>My<span>Space</span></h1>
+    <div class="phone-screen">
 
-        <button id="botaoMenu" class="botao-menu"
-            aria-label="Abrir menu">
-            ☰
-        </button>
-    </header>
+        <!-- CABEÇALHO -->
+        <header class="cabecalho">
 
-    <nav id="menu" class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#tarefas">Minhas tarefas</a>
-        <a href="#sobre">Sobre o aplicativo</a>
-    </nav>
+            <a class="marca" href="#inicio">
+                My<span>Space</span>
+            </a>
 
-    <main>
+            <button
+                id="botaoMenu"
+                class="botao-menu"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu">
 
-        <!-- Tela inicial -->
-        <section id="inicio" class="boas-vindas">
+                ☰
 
-            <div class="icone">✿</div>
-
-            <h2>Seu espaço, suas conquistas!</h2>
-
-            <p>
-                Organize seu dia, acompanhe suas tarefas
-                e comemore cada pequena conquista.
-            </p>
-
-            <button id="botaoComecar" class="botao-principal">
-                Começar agora
             </button>
 
-        </section>
+        </header>
 
-        <!-- Área de tarefas -->
-        <section id="tarefas" class="cartao">
+        <!-- MENU -->
+        <nav id="menu" class="menu" aria-label="Navegação principal">
 
-            <h2>Minhas tarefas 📝</h2>
+            <a href="#inicio">Início</a>
 
-            <p>Adicione suas atividades do dia.</p>
+            <a href="#tarefas">Minhas tarefas</a>
 
-            <form id="formTarefa">
+            <a href="#sobre">Personalizar</a>
 
-                <label for="nomeTarefa">
-                    Nome da tarefa
-                </label>
+        </nav>
 
-                <input
-                    type="text"
-                    id="nomeTarefa"
-                    placeholder="Ex.: Estudar programação"
-                    required
-                >
+        <main>
 
-                <button type="submit" class="botao-principal">
-                    Adicionar tarefa
+            <!-- TELA INICIAL -->
+            <section id="inicio" class="boas-vindas">
+
+                <div class="icone">✿</div>
+
+                <p class="etiqueta">
+                    SEU CANTINHO PESSOAL
+                </p>
+
+                <h1>
+                    Seu espaço,<br>
+                    suas conquistas!
+                </h1>
+
+                <p class="descricao">
+                    Organize seu dia, acompanhe suas tarefas
+                    e comemore cada pequena conquista.
+                </p>
+
+                <button
+                    id="botaoComecar"
+                    class="botao-principal"
+                    type="button">
+
+                    Começar agora <span>→</span>
+
                 </button>
 
-            </form>
+            </section>
 
-            <p id="contador">
-                Você tem 0 tarefas pendentes.
-            </p>
+            <!-- TAREFAS -->
+            <section id="tarefas" class="cartao">
 
-            <ul id="listaTarefas"></ul>
+                <div class="titulo-secao">
 
-        </section>
+                    <div>
 
-        <!-- Interação de cores -->
-        <section id="sobre" class="cartao">
+                        <p class="etiqueta">
+                            UM PASSO DE CADA VEZ
+                        </p>
 
-            <h2>Personalize seu espaço 🎨</h2>
+                        <h2>
+                            Minhas tarefas <span>✎</span>
+                        </h2>
 
-            <p>Escolha a cor do seu aplicativo!</p>
+                    </div>
 
-            <div class="cores">
+                    <div
+                        class="contador-bolha"
+                        id="resumoContador">
 
-                <button class="cor cor-rosa"
-                    data-cor="#f7dce8"
-                    aria-label="Tema rosa">
-                </button>
+                        0
 
-                <button class="cor cor-lilas"
-                    data-cor="#e6ddff"
-                    aria-label="Tema lilás">
-                </button>
+                    </div>
 
-                <button class="cor cor-azul"
-                    data-cor="#d9edff"
-                    aria-label="Tema azul">
-                </button>
+                </div>
 
-            </div>
+                <p class="texto-apoio">
+                    O que você quer realizar hoje?
+                </p>
 
-            <p id="mensagemCor">
-                Seu espaço do seu jeito!
-            </p>
+                <form id="formTarefa">
 
-        </section>
+                    <label for="nomeTarefa">
+                        Nome da tarefa
+                    </label>
 
-    </main>
+                    <input
+                        type="text"
+                        id="nomeTarefa"
+                        name="nomeTarefa"
+                        placeholder="Ex.: Estudar programação"
+                        maxlength="120"
+                        required>
 
-    <footer>
-        <p>MySpace © 2026 | Desenvolvido por você 💗</p>
-    </footer>
+                    <button
+                        type="submit"
+                        class="botao-principal">
 
-    <!-- Conexão com o JavaScript -->
+                        + Adicionar tarefa
+
+                    </button>
+
+                </form>
+
+                <p
+                    id="contador"
+                    class="contador-texto"
+                    aria-live="polite">
+
+                    Você tem 0 tarefas pendentes.
+
+                </p>
+
+                <ul
+                    id="listaTarefas"
+                    aria-label="Lista de tarefas">
+
+                </ul>
+
+                <p id="listaVazia" class="lista-vazia">
+                    Suas tarefas aparecerão aqui. ✨
+                </p>
+
+            </section>
+
+            <!-- PERSONALIZAÇÃO -->
+            <section id="sobre" class="cartao personalizacao">
+
+                <p class="etiqueta">
+                    DO SEU JEITO
+                </p>
+
+                <h2>
+                    Personalize seu espaço <span>♡</span>
+                </h2>
+
+                <p class="texto-apoio">
+                    Escolha um tema para o seu aplicativo.
+                </p>
+
+                <div
+                    class="cores"
+                    role="group"
+                    aria-label="Escolha a cor do tema">
+
+                    <button
+                        class="cor cor-rosa selecionada"
+                        type="button"
+                        data-cor="#fff8fb"
+                        data-destaque="#b45c86"
+                        aria-label="Tema rosa"
+                        aria-pressed="true">
+                    </button>
+
+                    <button
+                        class="cor cor-lilas"
+                        type="button"
+                        data-cor="#faf7ff"
+                        data-destaque="#8870b5"
+                        aria-label="Tema lilás"
+                        aria-pressed="false">
+                    </button>
+
+                    <button
+                        class="cor cor-azul"
+                        type="button"
+                        data-cor="#f4faff"
+                        data-destaque="#568bb8"
+                        aria-label="Tema azul"
+                        aria-pressed="false">
+                    </button>
+
+                </div>
+
+                <p
+                    id="mensagemCor"
+                    class="mensagem-cor"
+                    aria-live="polite">
+
+                    Seu espaço, suas regras. 💗
+
+                </p>
+
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer>
+
+            <span class="rodape-icone">✿</span>
+
+            <p>MySpace © 2026</p>
+
+            <small>Feito com carinho por você</small>
+
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
