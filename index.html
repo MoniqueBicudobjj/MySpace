@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar à tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MySpace | Meu Aplicativo</title>
+
+    <!-- Conexão com o CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <h1>My<span>Space</span></h1>
+
+        <button id="botaoMenu" class="botao-menu"
+            aria-label="Abrir menu">
+            ☰
+        </button>
+    </header>
+
+    <nav id="menu" class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#tarefas">Minhas tarefas</a>
+        <a href="#sobre">Sobre o aplicativo</a>
+    </nav>
+
+    <main>
+
+        <!-- Tela inicial -->
+        <section id="inicio" class="boas-vindas">
+
+            <div class="icone">✿</div>
+
+            <h2>Seu espaço, suas conquistas!</h2>
+
+            <p>
+                Organize seu dia, acompanhe suas tarefas
+                e comemore cada pequena conquista.
+            </p>
+
+            <button id="botaoComecar" class="botao-principal">
+                Começar agora
+            </button>
+
+        </section>
+
+        <!-- Área de tarefas -->
+        <section id="tarefas" class="cartao">
+
+            <h2>Minhas tarefas 📝</h2>
+
+            <p>Adicione suas atividades do dia.</p>
+
+            <form id="formTarefa">
+
+                <label for="nomeTarefa">
+                    Nome da tarefa
+                </label>
+
+                <input
+                    type="text"
+                    id="nomeTarefa"
+                    placeholder="Ex.: Estudar programação"
+                    required
+                >
+
+                <button type="submit" class="botao-principal">
+                    Adicionar tarefa
+                </button>
+
+            </form>
+
+            <p id="contador">
+                Você tem 0 tarefas pendentes.
+            </p>
+
+            <ul id="listaTarefas"></ul>
+
+        </section>
+
+        <!-- Interação de cores -->
+        <section id="sobre" class="cartao">
+
+            <h2>Personalize seu espaço 🎨</h2>
+
+            <p>Escolha a cor do seu aplicativo!</p>
+
+            <div class="cores">
+
+                <button class="cor cor-rosa"
+                    data-cor="#f7dce8"
+                    aria-label="Tema rosa">
+                </button>
+
+                <button class="cor cor-lilas"
+                    data-cor="#e6ddff"
+                    aria-label="Tema lilás">
+                </button>
+
+                <button class="cor cor-azul"
+                    data-cor="#d9edff"
+                    aria-label="Tema azul">
+                </button>
+
+            </div>
+
+            <p id="mensagemCor">
+                Seu espaço do seu jeito!
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>MySpace © 2026 | Desenvolvido por você 💗</p>
+    </footer>
+
+    <!-- Conexão com o JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
