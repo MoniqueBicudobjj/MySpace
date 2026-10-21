@@ -1,137 +1,592 @@
+:root {
+    --fundo: #fff8fb;
+    --destaque: #b45c86;
+    --destaque-escuro: #914369;
+    --texto: #39313a;
+    --texto-suave: #81717c;
+    --rosa-claro: #f7e4ed;
+    --borda: #f0e3e9;
+    --cartao: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     min-height: 100%;
-    background-color: #e9e5e8;
+    scroll-behavior: smooth;
+    scroll-padding-top: 16px;
+    background: #e9e5e8;
 }
 
 body {
+    min-height: 100vh;
+    padding: 0;
+    color: var(--texto);
+    background: #e9e5e8;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+
+/* =====================================
+   TELA DO APLICATIVO
+===================================== */
+
+.phone-screen {
     width: 100%;
     max-width: 430px;
     min-height: 100vh;
     margin: 0 auto;
-
-    background-color: #fff8fb;
-
-    overflow-x: hidden;
-
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    background: var(--fundo);
+    box-shadow: 0 12px 35px rgba(77, 48, 66, 0.10);
+    transition: background-color 0.2s ease;
 }
 
-/* Cabeçalho */
+
+/* =====================================
+   CABEÇALHO
+===================================== */
 
 .cabecalho {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 22px;
+    background: var(--cartao);
+    border-bottom: 1px solid rgba(180, 92, 134, 0.08);
 }
 
-/* Menu */
-
-.menu {
-    width: 100%;
+.marca {
+    color: var(--destaque);
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
 }
 
-/* Conteúdo */
-
-main {
-    width: 100%;
-    max-width: 100%;
-    padding: 22px 16px;
+.marca span {
+    color: var(--texto);
 }
 
-/* Boas-vindas */
-
-.boas-vindas {
-    width: 100%;
-    padding: 30px 18px;
-    border-radius: 22px;
-}
-
-.boas-vindas h2 {
+.botao-menu {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 13px;
+    background: #fbedf3;
+    color: var(--destaque-escuro);
     font-size: 25px;
 }
 
-/* Cartões */
 
-.cartao {
-    width: 100%;
-    padding: 22px 16px;
-    border-radius: 18px;
+/* =====================================
+   MENU DE NAVEGAÇÃO
+===================================== */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    padding: 13px 12px;
+    background: var(--rosa-claro);
 }
 
-/* Formulário */
-
-form {
-    width: 100%;
+.menu a {
+    color: #624353;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-input {
-    width: 100%;
-    min-width: 0;
+.menu a:hover {
+    color: var(--destaque-escuro);
 }
 
-/* Botões */
+
+/* =====================================
+   CONTEÚDO PRINCIPAL
+===================================== */
+
+main {
+    width: 100%;
+    padding: 23px 17px 12px;
+}
+
+
+/* =====================================
+   BOAS-VINDAS
+===================================== */
+
+.boas-vindas {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 22px 27px;
+    margin-bottom: 19px;
+    border: 1px solid rgba(180, 92, 134, 0.08);
+    border-radius: 25px;
+    background: linear-gradient(
+        145deg,
+        #f9e4ee 0%,
+        #f0e9ff 100%
+    );
+    text-align: center;
+}
+
+.icone {
+    margin-bottom: 4px;
+    color: var(--destaque);
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.etiqueta {
+    color: var(--destaque-escuro);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.boas-vindas h1 {
+    margin: 9px 0 12px;
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.18;
+    letter-spacing: -0.8px;
+}
+
+.descricao {
+    max-width: 290px;
+    margin: 0 auto 20px;
+    color: #655461;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   BOTÕES PRINCIPAIS
+===================================== */
 
 .botao-principal {
-    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 49px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 13px;
+    background: var(--destaque);
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 5px 12px rgba(180, 92, 134, 0.16);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Lista de tarefas */
+.botao-principal:hover {
+    background: var(--destaque-escuro);
+}
+
+.botao-principal:active {
+    transform: scale(0.985);
+}
+
+
+/* =====================================
+   CARTÕES
+===================================== */
+
+.cartao {
+    padding: 22px 18px;
+    margin-bottom: 19px;
+    border: 1px solid rgba(180, 92, 134, 0.07);
+    border-radius: 21px;
+    background: var(--cartao);
+    box-shadow: 0 5px 18px rgba(77, 48, 66, 0.045);
+}
+
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cartao h2 {
+    margin-top: 3px;
+    font-size: 21px;
+    line-height: 1.35;
+    letter-spacing: -0.4px;
+}
+
+.cartao h2 span {
+    color: var(--destaque);
+}
+
+.texto-apoio {
+    margin: 9px 0 17px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.contador-bolha {
+    display: grid;
+    flex-shrink: 0;
+    width: 39px;
+    height: 39px;
+    place-items: center;
+    border-radius: 13px;
+    background: #fbedf3;
+    color: var(--destaque-escuro);
+    font-weight: 800;
+}
+
+
+/* =====================================
+   FORMULÁRIO DE TAREFAS
+===================================== */
+
+#formTarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formTarefa label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#nomeTarefa {
+    width: 100%;
+    min-width: 0;
+    min-height: 49px;
+    padding: 12px 13px;
+    border: 1px solid #ead9e2;
+    border-radius: 12px;
+    background: #fffdfd;
+    color: var(--texto);
+    font-size: 16px;
+}
+
+#nomeTarefa::placeholder {
+    color: #a3949e;
+    font-size: 13px;
+}
+
+#nomeTarefa:focus {
+    border-color: var(--destaque);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(180, 92, 134, 0.10);
+}
+
+#formTarefa .botao-principal {
+    margin-top: 2px;
+}
+
+
+/* =====================================
+   LISTA DE TAREFAS
+===================================== */
+
+.contador-texto {
+    margin: 18px 0 7px;
+    color: var(--destaque-escuro);
+    font-size: 12px;
+    font-weight: 700;
+}
 
 #listaTarefas {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
 
 #listaTarefas li {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     min-width: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
 }
 
-/* Rodapé */
-
-footer {
-    width: 100%;
-    padding: 20px 12px;
+.texto-tarefa {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: 13px;
 }
+
+.tarefa-concluida {
+    opacity: 0.55;
+    text-decoration: line-through;
+}
+
+.acoes-tarefa {
+    display: flex;
+    flex-shrink: 0;
+    gap: 6px;
+}
+
+.botao-acao {
+    display: grid;
+    width: 36px;
+    height: 38px;
+    place-items: center;
+    border: none;
+    border-radius: 11px;
+    font-size: 16px;
+}
+
+.botao-concluir {
+    background: #e1f4e5;
+    color: #286b3c;
+}
+
+.botao-excluir {
+    background: #ffe7e7;
+    color: #a52e2e;
+}
+
+.lista-vazia {
+    padding: 13px 0 2px;
+    color: #9b8b95;
+    font-size: 12px;
+    text-align: center;
+}
+
+.lista-vazia.oculta {
+    display: none;
+}
+
 
 /* =====================================
-   VISUAL DO CELULAR NO COMPUTADOR
+   PERSONALIZAÇÃO DE CORES
 ===================================== */
 
-@media screen and (min-width: 500px) {
+.personalizacao h2 {
+    font-size: 20px;
+}
 
-    html {
-        padding: 25px 0;
-        background-color: #e9e5e8;
-    }
+.cores {
+    display: flex;
+    gap: 16px;
+    margin: 18px 0 14px;
+}
+
+.cor {
+    width: 43px;
+    height: 43px;
+    border: 3px solid white;
+    border-radius: 50%;
+    outline: 1px solid #e4d9df;
+    transition: transform 0.2s ease, outline 0.2s ease;
+}
+
+.cor:active {
+    transform: scale(0.94);
+}
+
+.cor.selecionada {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+.cor-rosa {
+    background: #f7dce8;
+}
+
+.cor-lilas {
+    background: #e6ddff;
+}
+
+.cor-azul {
+    background: #d9edff;
+}
+
+.mensagem-cor {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+footer {
+    padding: 19px 12px 24px;
+    background: var(--rosa-claro);
+    text-align: center;
+}
+
+.rodape-icone {
+    display: block;
+    color: var(--destaque);
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+footer p {
+    color: #624353;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+footer small {
+    color: #887583;
+    font-size: 10px;
+}
+
+
+/* =====================================
+   COMPUTADOR: FORMATO DE CELULAR
+===================================== */
+
+@media screen and (min-width: 600px) {
 
     body {
+        padding: 24px 0;
+    }
+
+    .phone-screen {
         width: 390px;
-        max-width: calc(100% - 30px);
-        min-height: calc(100vh - 50px);
-
-        border-radius: 28px;
-
+        max-width: calc(100vw - 32px);
+        min-height: min(844px, calc(100vh - 48px));
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 34px;
         overflow: hidden;
 
         box-shadow:
-            0 10px 40px rgba(0, 0, 0, 0.16);
-    }
-
-    main {
-        padding: 22px 16px;
+            0 0 0 7px #d7d2d6,
+            0 18px 55px rgba(43, 33, 41, 0.22);
     }
 
     .cabecalho {
-        padding: 14px 18px;
+        padding: 15px 20px;
+    }
+
+    main {
+        padding: 20px 15px 10px;
     }
 
     .boas-vindas {
-        padding: 30px 18px;
+        padding: 27px 19px 24px;
     }
 
     .cartao {
-        padding: 22px 16px;
+        padding: 20px 16px;
     }
 
-    footer {
-        font-size: 12px;
+}
+
+
+/* =====================================
+   CELULAR REAL: OCUPAR A TELA
+===================================== */
+
+@media screen and (max-width: 599px) {
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        background: var(--fundo);
     }
+
+    .phone-screen {
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        min-height: 100dvh;
+        margin: 0;
+        box-shadow: none;
+    }
+
+}
+
+
+/* =====================================
+   CELULARES PEQUENOS
+===================================== */
+
+@media screen and (max-width: 360px) {
+
+    .cabecalho {
+        padding: 13px 17px;
+    }
+
+    main {
+        padding: 16px 11px 8px;
+    }
+
+    .boas-vindas {
+        padding: 25px 15px 22px;
+        border-radius: 21px;
+    }
+
+    .boas-vindas h1 {
+        font-size: 25px;
+    }
+
+    .cartao {
+        padding: 19px 13px;
+        border-radius: 18px;
+    }
+
+    .cartao h2 {
+        font-size: 19px;
+    }
+
+    .botao-acao {
+        width: 33px;
+        height: 36px;
+    }
+
+}
+
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
 }
