@@ -1,566 +1,137 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 15px;
+    min-height: 100%;
+    background-color: #e9e5e8;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff8fb;
-    color: #39313a;
-    line-height: 1.6;
+    width: 100%;
+    max-width: 430px;
     min-height: 100vh;
+    margin: 0 auto;
+
+    background-color: #fff8fb;
+
     overflow-x: hidden;
-    transition: background-color 0.3s ease;
+
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
 }
 
-button,
-input {
-    font: inherit;
-}
-
-button {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible {
-    outline: 3px solid #b45c86;
-    outline-offset: 3px;
-}
-
-/* ============================
-   CABEÇALHO
-============================ */
+/* Cabeçalho */
 
 .cabecalho {
-    background-color: #ffffff;
-    padding: 16px 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    position: relative;
-    z-index: 10;
+    width: 100%;
 }
 
-.cabecalho h1 {
-    color: #b45c86;
-    font-size: 27px;
-    line-height: 1.3;
-}
-
-.cabecalho h1 span {
-    color: #39313a;
-}
-
-.botao-menu {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #b45c86;
-    padding: 5px;
-}
-
-/* ============================
-   MENU DE NAVEGAÇÃO
-============================ */
+/* Menu */
 
 .menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    padding: 14px;
-    background-color: #f7e4ed;
+    width: 100%;
 }
 
-.menu a {
-    color: #624353;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s;
-}
-
-.menu a:hover {
-    color: #b45c86;
-}
-
-/* ============================
-   CONTEÚDO PRINCIPAL
-============================ */
+/* Conteúdo */
 
 main {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    max-width: 100%;
+    padding: 22px 16px;
 }
 
-/* ============================
-   TELA DE BOAS-VINDAS
-============================ */
+/* Boas-vindas */
 
 .boas-vindas {
-    background: linear-gradient(135deg, #f9e4ee, #eee6ff);
-    border-radius: 25px;
-    padding: 45px 30px;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.icone {
-    font-size: 55px;
-    color: #b45c86;
-    margin-bottom: 8px;
+    width: 100%;
+    padding: 30px 18px;
+    border-radius: 22px;
 }
 
 .boas-vindas h2 {
-    font-size: 30px;
-    line-height: 1.3;
-    margin-bottom: 15px;
+    font-size: 25px;
 }
 
-.boas-vindas p {
-    max-width: 500px;
-    margin: 0 auto 22px;
-    color: #514650;
-}
-
-/* ============================
-   BOTÕES PRINCIPAIS
-============================ */
-
-.botao-principal {
-    background-color: #b45c86;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 14px 22px;
-    min-height: 46px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.botao-principal:hover {
-    background-color: #914369;
-}
-
-.botao-principal:active {
-    transform: scale(0.98);
-}
-
-/* ============================
-   CARTÕES
-============================ */
+/* Cartões */
 
 .cartao {
-    background-color: white;
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    padding: 22px 16px;
+    border-radius: 18px;
 }
 
-.cartao h2 {
-    font-size: 23px;
-    line-height: 1.4;
-    margin-bottom: 8px;
-}
-
-.cartao > p {
-    margin-bottom: 18px;
-}
-
-/* ============================
-   FORMULÁRIO
-============================ */
+/* Formulário */
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-form label {
-    font-weight: bold;
-    font-size: 15px;
+    width: 100%;
 }
 
 input {
-    display: block;
     width: 100%;
     min-width: 0;
-    min-height: 48px;
-    padding: 13px 14px;
-    border: 1px solid #e3cbd7;
-    border-radius: 10px;
-    background-color: #fffdfd;
-    color: #39313a;
-    font-size: 16px;
 }
 
-input:focus {
-    border-color: #b45c86;
-    outline: none;
+/* Botões */
+
+.botao-principal {
+    max-width: 100%;
 }
 
-input::placeholder {
-    color: #94828d;
-}
-
-/* ============================
-   CONTADOR DE TAREFAS
-============================ */
-
-#contador {
-    margin-top: 20px;
-    margin-bottom: 12px;
-    font-weight: bold;
-    color: #914369;
-    font-size: 14px;
-}
-
-/* ============================
-   LISTA DE TAREFAS
-============================ */
+/* Lista de tarefas */
 
 #listaTarefas {
-    list-style: none;
-    margin-top: 12px;
+    width: 100%;
 }
 
 #listaTarefas li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px solid #f0e3e9;
+    width: 100%;
     min-width: 0;
 }
 
-.texto-tarefa {
-    flex: 1;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    font-size: 15px;
-}
-
-.tarefa-concluida {
-    text-decoration: line-through;
-    opacity: 0.55;
-}
-
-.acoes-tarefa {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.botao-acao {
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 17px;
-    transition: transform 0.2s;
-}
-
-.botao-acao:active {
-    transform: scale(0.93);
-}
-
-.botao-concluir {
-    background-color: #e1f4e5;
-    color: #286b3c;
-}
-
-.botao-excluir {
-    background-color: #ffe0e0;
-    color: #a52e2e;
-}
-
-/* ============================
-   PERSONALIZAÇÃO DE CORES
-============================ */
-
-.cores {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    margin: 20px 0;
-}
-
-.cor {
-    width: 46px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 3px solid white;
-    outline: 1px solid #dddddd;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.cor:hover {
-    transform: scale(1.08);
-}
-
-.cor:active {
-    transform: scale(0.95);
-}
-
-.cor-rosa {
-    background-color: #f7dce8;
-}
-
-.cor-lilas {
-    background-color: #e6ddff;
-}
-
-.cor-azul {
-    background-color: #d9edff;
-}
-
-/* ============================
-   RODAPÉ
-============================ */
+/* Rodapé */
 
 footer {
-    background-color: #f7e4ed;
-    text-align: center;
-    padding: 22px 15px;
-    font-size: 14px;
-    overflow-wrap: anywhere;
+    width: 100%;
+    padding: 20px 12px;
 }
 
-/* ============================
-   CELULARES
-============================ */
+/* =====================================
+   VISUAL DO CELULAR NO COMPUTADOR
+===================================== */
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 500px) {
+
+    html {
+        padding: 25px 0;
+        background-color: #e9e5e8;
+    }
 
     body {
-        font-size: 15px;
+        width: 390px;
+        max-width: calc(100% - 30px);
+        min-height: calc(100vh - 50px);
+
+        border-radius: 28px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, 0.16);
     }
-
-    /* Cabeçalho compacto */
-
-    .cabecalho {
-        padding: 14px 20px;
-    }
-
-    .cabecalho h1 {
-        font-size: 24px;
-    }
-
-    .botao-menu {
-        display: block;
-        min-width: 44px;
-        min-height: 44px;
-    }
-
-    /* Menu recolhível */
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 8px 20px;
-    }
-
-    .menu.menu-aberto {
-        display: flex;
-    }
-
-    .menu a {
-        display: block;
-        padding: 13px 10px;
-        border-bottom: 1px solid rgba(98, 67, 83, 0.12);
-    }
-
-    .menu a:last-child {
-        border-bottom: none;
-    }
-
-    /* Espaçamento geral */
 
     main {
-        padding: 20px 14px;
+        padding: 22px 16px;
     }
 
-    /* Boas-vindas */
+    .cabecalho {
+        padding: 14px 18px;
+    }
 
     .boas-vindas {
-        padding: 34px 20px;
-        border-radius: 20px;
-        margin-bottom: 20px;
+        padding: 30px 18px;
     }
-
-    .icone {
-        font-size: 46px;
-    }
-
-    .boas-vindas h2 {
-        font-size: 25px;
-        line-height: 1.35;
-    }
-
-    .boas-vindas p {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 22px;
-    }
-
-    /* Botão fácil de tocar */
-
-    .boas-vindas .botao-principal {
-        width: 100%;
-        min-height: 50px;
-    }
-
-    /* Cartões mais compactos */
 
     .cartao {
-        padding: 22px 17px;
-        border-radius: 17px;
-        margin-bottom: 18px;
+        padding: 22px 16px;
     }
-
-    .cartao h2 {
-        font-size: 21px;
-    }
-
-    /* Formulário */
-
-    form {
-        gap: 11px;
-    }
-
-    form .botao-principal {
-        width: 100%;
-        min-height: 50px;
-        margin-top: 3px;
-    }
-
-    input {
-        min-height: 50px;
-        font-size: 16px;
-    }
-
-    /* Lista de tarefas */
-
-    #listaTarefas li {
-        gap: 8px;
-        padding: 12px 0;
-    }
-
-    .texto-tarefa {
-        font-size: 14px;
-    }
-
-    .acoes-tarefa {
-        gap: 6px;
-    }
-
-    .botao-acao {
-        width: 38px;
-        height: 42px;
-    }
-
-    /* Cores */
-
-    .cores {
-        gap: 20px;
-    }
-
-    .cor {
-        width: 46px;
-        height: 46px;
-    }
-
-    /* Rodapé */
 
     footer {
-        padding: 20px 16px;
         font-size: 12px;
-        line-height: 1.7;
-    }
-}
-
-/* ============================
-   CELULARES MUITO PEQUENOS
-============================ */
-
-@media screen and (max-width: 360px) {
-
-    main {
-        padding: 15px 10px;
-    }
-
-    .cabecalho {
-        padding: 12px 14px;
-    }
-
-    .cabecalho h1 {
-        font-size: 22px;
-    }
-
-    .boas-vindas {
-        padding: 28px 15px;
-    }
-
-    .boas-vindas h2 {
-        font-size: 22px;
-    }
-
-    .cartao {
-        padding: 19px 13px;
-    }
-
-    .cartao h2 {
-        font-size: 19px;
-    }
-
-    #listaTarefas li {
-        gap: 5px;
-    }
-
-    .acoes-tarefa {
-        gap: 4px;
-    }
-
-    .botao-acao {
-        width: 34px;
-        height: 38px;
-    }
-}
-
-/* ============================
-   ACESSIBILIDADE
-============================ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
     }
 }
