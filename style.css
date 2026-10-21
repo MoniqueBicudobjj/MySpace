@@ -1,1 +1,324 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8fb;
+    color: #39313a;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    background-color: #ffffff;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cabecalho h1 {
+    color: #b45c86;
+    font-size: 27px;
+}
+
+.cabecalho h1 span {
+    color: #39313a;
+}
+
+.botao-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+    color: #b45c86;
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px;
+    background-color: #f7e4ed;
+}
+
+.menu a {
+    color: #624353;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #b45c86;
+}
+
+/* Conteúdo principal */
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Boas-vindas */
+
+.boas-vindas {
+    background: linear-gradient(135deg, #f9e4ee, #eee6ff);
+    border-radius: 25px;
+    padding: 55px 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icone {
+    font-size: 60px;
+    color: #b45c86;
+    margin-bottom: 10px;
+}
+
+.boas-vindas h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.boas-vindas p {
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+/* Botões */
+
+.botao-principal {
+    background-color: #b45c86;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #914369;
+    transform: translateY(-2px);
+}
+
+/* Cartões */
+
+.cartao {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.cartao h2 {
+    margin-bottom: 10px;
+}
+
+.cartao > p {
+    margin-bottom: 18px;
+}
+
+/* Formulário */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e3cbd7;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b45c86;
+}
+
+/* Contador */
+
+#contador {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #914369;
+}
+
+/* Lista de tarefas */
+
+#listaTarefas {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#listaTarefas li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid #f0e3e9;
+    overflow-wrap: anywhere;
+}
+
+.texto-tarefa {
+    flex: 1;
+}
+
+.tarefa-concluida {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
+.acoes-tarefa {
+    display: flex;
+    gap: 8px;
+}
+
+.botao-acao {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.botao-concluir {
+    background-color: #e1f4e5;
+}
+
+.botao-excluir {
+    background-color: #ffe0e0;
+}
+
+/* Personalização de cores */
+
+.cores {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.cor {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid white;
+    outline: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+.cor-rosa {
+    background-color: #f7dce8;
+}
+
+.cor-lilas {
+    background-color: #e6ddff;
+}
+
+.cor-azul {
+    background-color: #d9edff;
+}
+
+/* Rodapé */
+
+footer {
+    background-color: #f7e4ed;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+
+@media (max-width: 480px) {
+
+    .cabecalho {
+        padding: 15px 20px;
+    }
+
+    .cabecalho h1 {
+        font-size: 24px;
+    }
+
+    .botao-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .menu.menu-aberto {
+        display: flex;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    .boas-vindas {
+        padding: 35px 20px;
+        border-radius: 20px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 24px;
+    }
+
+    .boas-vindas p {
+        font-size: 15px;
+    }
+
+    .cartao {
+        padding: 22px 17px;
+    }
+
+    .botao-principal {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    input {
+        min-height: 48px;
+    }
+
+    #listaTarefas li {
+        align-items: flex-start;
+    }
+
+    .acoes-tarefa {
+        flex-direction: column;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+}
